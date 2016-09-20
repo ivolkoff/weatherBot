@@ -27,7 +27,14 @@ class Weather extends Key
         curl_close($ch);
         $response = json_decode($response);
 
-     print_r($response['name']['main.temp']['wind.speed']);
+        return($response);
+        //die('$response = '. print_r($response, true)."\n");
+
+
+
+
+
+   //  print_r($response['name']['main.temp']['wind.speed']);
 
 
 
@@ -40,7 +47,16 @@ class Weather extends Key
     }
 
 
+public function getWeater()
+   {
 
+       $getText= array(
+
+           'name'=> $this->apiWeather('name'),
+           'temp'=>$this->apiWeather('main.temp')
+       );
+
+   }
 
 
 
